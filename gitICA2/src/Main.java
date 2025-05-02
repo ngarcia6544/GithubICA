@@ -17,4 +17,19 @@ public class Main {
 
         //return characters;
     }
+    public static boolean is_valid_pal(String s) {
+        if (s == null) return false;
+
+        StringBuilder cleaned = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isLetter(c)) {
+                cleaned.append(Character.toLowerCase(c));
+            }
+        }
+
+        String filtered = cleaned.toString();
+        String reversed = cleaned.reverse().toString();
+
+        return filtered.equals(reversed);
+    }
 }
